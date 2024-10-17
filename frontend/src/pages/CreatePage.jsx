@@ -9,6 +9,7 @@ import {
   VStack,
   useToast,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import { useProductStore } from '../store/product';
 
 const CreatePage = () => {
@@ -19,6 +20,7 @@ const CreatePage = () => {
   });
 
   const toast = useToast();
+  const navigate = useNavigate();
 
   const { createProduct } = useProductStore();
 
@@ -40,6 +42,7 @@ const CreatePage = () => {
       });
     }
     setNewProduct({ name: '', price: '', image: '' });
+    navigate('/');
   };
 
   return (
