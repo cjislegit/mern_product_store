@@ -44,9 +44,11 @@ const Navbar = () => {
           <Button onClick={toggleColorMode}>
             {colorMode === 'light' ? <IoMoon /> : <LuSun size='20' />}
           </Button>
-          <Button>
-            <FaShoppingCart />
-          </Button>
+          <Link to={'/cart'}>
+            <Button>
+              <FaShoppingCart />
+            </Button>
+          </Link>
         </HStack>
       </Flex>
     </Container>
