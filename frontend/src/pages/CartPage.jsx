@@ -11,8 +11,9 @@ import {
   Th,
   Tbody,
   Td,
+  IconButton,
 } from '@chakra-ui/react';
-import { MdDelete } from 'react-icons/md';
+import { MdDelete, MdShoppingCartCheckout } from 'react-icons/md';
 
 function CartPage() {
   return (
@@ -21,14 +22,13 @@ function CartPage() {
         <Heading as={'h1'} size={'2x1'} textAlign={'center'} mb={8}>
           Smart Cart
         </Heading>
-        {/* <Box
+        <TableContainer
           w={'full'}
           bg={useColorModeValue('white', 'gray.800')}
           p={6}
           rounded={'lg'}
           shadow={'md'}
-        ></Box> */}
-        <TableContainer bg={useColorModeValue('white', 'gray.800')}>
+        >
           <Table variant={'simple'}>
             <Thead>
               <Tr>
@@ -62,10 +62,12 @@ function CartPage() {
               <Tr>
                 <Td>Total:</Td>
                 <Td>$1500</Td>
+                <Td></Td>
               </Tr>
             </Tbody>
           </Table>
         </TableContainer>
+        <IconButton icon={<MdShoppingCartCheckout />} colorScheme='green' />
       </VStack>
     </Container>
   );
