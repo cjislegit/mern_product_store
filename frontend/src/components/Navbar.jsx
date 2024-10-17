@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { IoMoon } from 'react-icons/io5';
 import { LuSun } from 'react-icons/lu';
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -42,6 +43,9 @@ const Navbar = () => {
           </Link>
           <Button onClick={toggleColorMode}>
             {colorMode === 'light' ? <IoMoon /> : <LuSun size='20' />}
+          </Button>
+          <Button>
+            <FaShoppingCart />
           </Button>
         </HStack>
       </Flex>
