@@ -22,6 +22,7 @@ import {
 } from '@chakra-ui/react';
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useProductStore } from '../store/product';
+import { FaCartPlus } from 'react-icons/fa';
 
 const ProductsCard = ({ product }) => {
   const [updatedProduct, setUpdatedProduct] = useState(product);
@@ -106,6 +107,7 @@ const ProductsCard = ({ product }) => {
             onClick={() => handleDeleteProduct(product._id)}
             colorScheme='red'
           />
+          <IconButton icon={<FaCartPlus />} colorScheme='green' />
         </HStack>
       </Box>
 
