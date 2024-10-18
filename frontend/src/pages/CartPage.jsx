@@ -3,7 +3,6 @@ import {
   Heading,
   useColorModeValue,
   VStack,
-  Box,
   TableContainer,
   Table,
   Thead,
@@ -14,8 +13,12 @@ import {
   IconButton,
 } from '@chakra-ui/react';
 import { MdDelete, MdShoppingCartCheckout } from 'react-icons/md';
+import { useCartStore } from '../store/cart';
 
 function CartPage() {
+  const { cart } = useCartStore();
+  console.log(cart);
+
   return (
     <Container maxW={'container.sm'}>
       <VStack spacing={8}>
@@ -38,27 +41,15 @@ function CartPage() {
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>Smart Watch</Td>
-                <Td>$500</Td>
-                <Td>
-                  <MdDelete />
-                </Td>
-              </Tr>
-              <Tr>
-                <Td>Smart Watch</Td>
-                <Td>$500</Td>
-                <Td>
-                  <MdDelete />
-                </Td>
-              </Tr>
-              <Tr>
-                <Td>Smart Watch</Td>
-                <Td>$500</Td>
-                <Td>
-                  <MdDelete />
-                </Td>
-              </Tr>
+              {cart.map((product) => (
+                <Tr key={product._id}>
+                  <Td>{product.name}</Td>
+                  <Td>{product.price}</Td>
+                  <Td>
+                    <MdDelete />
+                  </Td>
+                </Tr>
+              ))}
               <Tr>
                 <Td>Total:</Td>
                 <Td>$1500</Td>

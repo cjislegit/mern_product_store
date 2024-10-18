@@ -22,6 +22,7 @@ import {
 } from '@chakra-ui/react';
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useProductStore } from '../store/product';
+import { useCartStore } from '../store/cart';
 import { FaCartPlus } from 'react-icons/fa';
 
 const ProductsCard = ({ product }) => {
@@ -30,8 +31,13 @@ const ProductsCard = ({ product }) => {
   const bg = useColorModeValue('white', 'GrAnalytics.800');
 
   const { deleteProduct, updateProduct } = useProductStore();
+  const { createCart, cart } = useCartStore();
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleCreateCart = (product) => {
+    createCart(product);
+  };
 
   const handleDeleteProduct = async (pid) => {
     const { success, message } = await deleteProduct(pid);
@@ -107,7 +113,11 @@ const ProductsCard = ({ product }) => {
             onClick={() => handleDeleteProduct(product._id)}
             colorScheme='red'
           />
-          <IconButton icon={<FaCartPlus />} colorScheme='green' />
+          <IconButton
+            icon={<FaCartPlus />}
+            colorScheme='green'
+            onClick={() => handleCreateCart(product)}
+          />
         </HStack>
       </Box>
 
