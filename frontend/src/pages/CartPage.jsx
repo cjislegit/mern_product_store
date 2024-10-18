@@ -67,7 +67,13 @@ function CartPage() {
             </Tbody>
           </Table>
         </TableContainer>
-        <IconButton icon={<MdShoppingCartCheckout />} colorScheme='green' />
+        <IconButton
+          alignSelf='flex-end'
+          icon={<MdShoppingCartCheckout />}
+          colorScheme='green'
+          px={8}
+          aria-label='Checkout Now'
+        />
       </VStack>
     </Container>
   );
