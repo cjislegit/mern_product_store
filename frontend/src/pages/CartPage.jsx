@@ -49,7 +49,9 @@ function CartPage() {
               {cart.map((product) => (
                 <Tr key={product._id}>
                   <Td>{product.name}</Td>
-                  <Td>{product.price}</Td>
+                  <Td>
+                    ${new Intl.NumberFormat('en-US').format(product.price)}
+                  </Td>
                   <Td>
                     <MdDelete />
                   </Td>
@@ -57,7 +59,7 @@ function CartPage() {
               ))}
               <Tr>
                 <Td>Total:</Td>
-                <Td>{totalPrice}</Td>
+                <Td>${new Intl.NumberFormat('en-US').format(totalPrice)}</Td>
                 <Td></Td>
               </Tr>
             </Tbody>
