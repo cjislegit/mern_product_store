@@ -37,6 +37,13 @@ const ProductsCard = ({ product }) => {
 
   const handleCreateCart = (product) => {
     createCart(product);
+    toast({
+      title: 'Added to Cart',
+      description: 'Added to Cart',
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    });
   };
 
   const handleDeleteProduct = async (pid) => {
