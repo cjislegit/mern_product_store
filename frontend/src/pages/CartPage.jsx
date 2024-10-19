@@ -16,13 +16,15 @@ import { MdDelete, MdShoppingCartCheckout } from 'react-icons/md';
 import { useCartStore } from '../store/cart';
 
 function CartPage() {
-  const { cart } = useCartStore();
+  const { cart, deleteCart } = useCartStore();
 
   let totalPrice = cart.reduce((total, product) => {
     return total + product.price;
   }, 0);
 
-  console.log(totalPrice);
+  const handleCartDelete = (pid) => {
+    deleteCart(pid);
+  };
 
   return (
     <Container maxW={'container.sm'}>
@@ -53,7 +55,7 @@ function CartPage() {
                     ${new Intl.NumberFormat('en-US').format(product.price)}
                   </Td>
                   <Td>
-                    <MdDelete />
+                    <MdDelete onClick={() => handleCartDelete(product._id)} />
                   </Td>
                 </Tr>
               ))}

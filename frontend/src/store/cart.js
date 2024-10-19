@@ -10,4 +10,10 @@ export const useCartStore = create((set) => ({
       cart: [...state.cart, product],
     }));
   },
+
+  deleteCart: (pid) => {
+    set((state) => ({
+      cart: state.cart.filter((product) => product._id !== pid),
+    }));
+  },
 }));
