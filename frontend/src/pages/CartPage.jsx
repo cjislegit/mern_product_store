@@ -17,7 +17,12 @@ import { useCartStore } from '../store/cart';
 
 function CartPage() {
   const { cart } = useCartStore();
-  console.log(cart);
+
+  let totalPrice = cart.reduce((total, product) => {
+    return total + product.price;
+  }, 0);
+
+  console.log(totalPrice);
 
   return (
     <Container maxW={'container.sm'}>
@@ -52,7 +57,7 @@ function CartPage() {
               ))}
               <Tr>
                 <Td>Total:</Td>
-                <Td>$1500</Td>
+                <Td>{totalPrice}</Td>
                 <Td></Td>
               </Tr>
             </Tbody>
