@@ -66,7 +66,7 @@ Once the server is running, you can visit the app in your browser at `http://loc
 This project requires the following environment variables:
 
 - `MONGO_URI`: Your MongoDB connection string.
-- `PORT`: The port the server will run on (default is usually 3000).
+- `PORT`: The port the server will run on 8080.
 
 ## Contributing
 
