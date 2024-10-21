@@ -6,6 +6,7 @@ The **MERN Product Store** is a full stack e-commerce platform built to demonstr
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Environment Variables](#environment-variables)
@@ -28,6 +29,14 @@ This project started as a tutorial from [freeCodeCamp](https://www.youtube.com/w
 - **React Router** for navigation between pages.
 - **Zustand** for state management.
 - **dotenv** for environment variables.
+
+## Screenshot
+
+![Screenshot of application](./screenshot-mern-product-store-9vlu.onrender.com-2024.10.20-17_16_21.png)
+
+## Deployed Application
+
+You can access the live version of the app [here](https://mern-product-store-9vlu.onrender.com/).
 
 ## Installation
 
